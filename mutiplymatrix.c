@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+    int matrixa[3][3] = {{2, 3, 4},
+                         {4, 5, 4},
+                         {9, 2, 1}};
+    int matrixb[3][3] = {{3, 4, 5},
+                         {2, 3, 2},
+                         {8, 9, 1}};
+    int result[3][3] = {0};
+
+    for (int i = 0; i < 3; ++i)
+    {
+        for (int j = 0; j < 3; ++j)
+        {
+            for (int k = 0; k < 3; ++k)
+            {
+                result[i][j] += matrixa[i][k] * matrixb[k][j];
+            }
+        }
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
